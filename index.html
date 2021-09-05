@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Surety Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- loading the minified version -->
+    <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align: left;">Flight Surety</h1>
+
+    <div id="ftc-harvest">
+    <h2>Airline</h2>
+    <h2> Register (Vote For) or Fund an Airline </h2>
+    Airline Address
+    <br>
+    <input type="text" id="newAirlineAddress" value="0x0000000000000000000000000000000000000000" size="50"><br>
+    <button class="btn-mine" type="button" data-id="0">Register/Vote Airline</button>
+    <h2>Fund Airline </h2>
+    <input type="number" id="fundAirlineFee" value="10">ETH<br>
+    <button class="btn-mine" type="button" data-id="1">Fund Airline</button>
+    <h2> Register new flight </h2>
+    Airline
+    <br>
+    <input type="text" id="newFlightAirlineAddress" value="0x0000000000000000000000000000000000000000" size="50"><br>
+    Flight Name
+    <br>
+    <input type="text" id="newFlightName" placeholder="Insert flight number (eg: LT3214)"><br>
+    Flight Time
+    <br>
+    <input type="text" id="newFlightTimestamp" value="1557002775"><br>
+    <button class="btn-mine" type="button" data-id="2">Register new Flight</button>
+    </div>
+    <h2>Passenger - buy insurance</h2>
+      Select Flight
+    <br>
+    <select id="flights">
+    </select>
+    <br>
+    <button class="btn-markForPurchase" type="button" data-id="3">Get Flights</button>
+    <br>
+    <br>
+    Insurance amount (max 1 ether)
+    <br>
+    <input type="number" id="insuranceAmount" name="itemPrice" value="500000"> Wei<br>
+    <button class="btn-sendForPurchase" type="button" data-id="4">Buy Insurance</button>
+    </div>
+    <h2>Oracles and Payout</h2>
+    <button class="btn-markForPurchase" type="button" data-id="5">Check Flight Status</button>
+    <br>
+    <br>
+    Amount to withdraw (max available)
+    <br>
+    <input type="number" id="insuranceAmountToWithdraw" name="itemPrice" value="0"> Wei
+    <br>
+    <button class="btn-sendForPurchase" type="button" data-id="6">Withdraw</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="dapp/js/web3.min.js"></script>
+    <script src="dapp/js/truffle-contract.js"></script>
+    <script src="dapp/js/app.js"></script>
+
+</body>
+
+</html>
