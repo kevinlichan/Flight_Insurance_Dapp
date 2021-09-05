@@ -10,7 +10,7 @@ Smart Contract Separation
 * Contracts have been separated into FlightSuretyData.sol and FlightSuretyApp.sol
 Dapp Created and Used for Contract Calls
 * Follow instructions for "Run the Dapp" or see screenshots below
-![truffle test](images/runthedapp.png)
+![truffle test](images/runthedapp.PNG)
 
 Oracle Server Application
 * Follow instructions for "Develop Oracle Server" or see screenshots below
