@@ -6,7 +6,7 @@ FlightSurety is a sample application project for Udacity's Blockchain course.
 
 ### Separation of Concerns, Operational Control and "Fail Fast"
 
-Smart Contract Separation
+*Smart Contract Separation*
 * Contracts have been separated into FlightSuretyData.sol and FlightSuretyApp.sol
 Dapp Created and Used for Contract Calls
 * Follow instructions for "Run the Dapp" or see screenshots below
