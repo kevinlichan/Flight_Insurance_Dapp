@@ -53,7 +53,7 @@ Functioning Oracle
 * Run trufffle.cmd test to view oracle.js tests pass
 
 Oracles Initialization
-* Follow instructions for "Develop Oracle Server"
+* Follow instructions for "Develop Oracle Server" or see screenshot below
 ![truffle test](images/developoracleserver.PNG)
 
 Oracle Updates
