@@ -6,8 +6,9 @@ FlightSurety is a sample application project for Udacity's Blockchain course.
 
 ### Separation of Concerns, Operational Control and "Fail Fast"
 
-* Smart Contract Separation *
+Smart Contract Separation
 * Contracts have been separated into FlightSuretyData.sol and FlightSuretyApp.sol
+
 Dapp Created and Used for Contract Calls
 * Follow instructions for "Run the Dapp" or see screenshots below
 ![truffle test](images/runthedapp.PNG)
@@ -18,6 +19,7 @@ Oracle Server Application
 
 Operational Status Control Implemented
 * Run truffle.cmd test to view "Separation of Concerns and Operational Control" test criteria passes
+
 Fail Fast Contract
 * "Require()" calls have been implemented in the beginning of each function body within each contract
 
@@ -25,9 +27,11 @@ Fail Fast Contract
 ### Airlines
 Airline Contract Initialization
 * First airline is registered with contract deployment
+
 Multiparty Consensus
 * Criteria: Airlines (Fund and Register Airlines)
 * Run truffle.cmd test to view "Multi-party consensus: Allow the registration of the 5th and beyond airline through a voting process" test criteria passes
+
 Airline Ante
 * Run trufffle.cmd test to view "Only registered AND funded airlines should be able to register a flight" test criteria passes
 
@@ -39,6 +43,7 @@ Passenger Airline Choice
 
 Passenger Payment
 * Run trufffle.cmd test to view "Criteria: Airlines (Register Flights) and Passengers (Buy Insurance)" test criteria passes
+
 Passenger Repayment && Passenger Withdraw && Insurance Payouts
 * Run truffle.cmd test to view "Criteria: Oracle (Oracle Functions, Oracle Initialization, Updates) && Passengers (Passenger Repayment, Withdraw, and Insurance Payouts)" test criteria passes
 
@@ -46,6 +51,7 @@ Passenger Repayment && Passenger Withdraw && Insurance Payouts
 ### Oracles (Server App)
 Functioning Oracle
 * Run trufffle.cmd test to view oracle.js tests pass
+
 Oracles Initialization
 * Follow instructions for "Develop Oracle Server"
 ![truffle test](images/developoracleserver.PNG)
