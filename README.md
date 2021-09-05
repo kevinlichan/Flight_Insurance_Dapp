@@ -14,7 +14,7 @@ Dapp Created and Used for Contract Calls
 
 Oracle Server Application
 * Follow instructions for "Develop Oracle Server" or see screenshots below
-![truffle test](images/developoracleserver.png)
+![truffle test](images/developoracleserver.PNG)
 
 Operational Status Control Implemented
 * Run truffle.cmd test to view "Separation of Concerns and Operational Control" test criteria passes
@@ -35,7 +35,7 @@ Airline Ante
 ### Passengers
 Passenger Airline Choice
 * See screenshot below or run the dapp
-![truffle test](images/passengerchoice.png)
+![truffle test](images/passengerchoice.PNG)
 
 Passenger Payment
 * Run trufffle.cmd test to view "Criteria: Airlines (Register Flights) and Passengers (Buy Insurance)" test criteria passes
@@ -48,11 +48,11 @@ Functioning Oracle
 * Run trufffle.cmd test to view oracle.js tests pass
 Oracles Initialization
 * Follow instructions for "Develop Oracle Server"
-![truffle test](images/developoracleserver.png)
+![truffle test](images/developoracleserver.PNG)
 
 Oracle Updates
 * Follow instructions for "Run the Dapp" or see screenshot below
-![truffle test](images/oracleupdates.png)
+![truffle test](images/oracleupdates.PNG)
 
 Oracle Functionality
 * Run trufffle.cmd test to view "Criteria: Oracle (Oracle Functions, Oracle Initialization, Updates) && Passengers (Passenger Repayment, Withdraw, and Insurance Payouts)" tests pass
