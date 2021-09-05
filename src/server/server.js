@@ -1,5 +1,4 @@
 const FlightSuretyApp = require('../../build/contracts/FlightSuretyApp.json');
-const FlightSuretyData = require('../../build/contracts/FlightSuretyData.json');
 const Config = require('./config.json');
 const Web3 = require('web3');
 const express = require('express');
@@ -9,20 +8,21 @@ let config = Config['localhost'];
 let web3 = new Web3(new Web3.providers.WebsocketProvider(config.url.replace('http', 'ws')));
 web3.eth.defaultAccount = web3.eth.accounts[0];
 let flightSuretyApp = new web3.eth.Contract(FlightSuretyApp.abi, config.appAddress);
-let flightSuretyData = new web3.eth.Contract(FlightSuretyData.abi, config.dataAddress);
-const oracles = new Map();
+
+
+const oraclesMap = new Map();
 let accounts = [];
 const statuses = [20, 0, 10, 30, 40, 50];
 
-const registerInitialOracles = async () => {
+const initializeOracles = async () => {
     try {
         accounts = await getAccounts();
         console.log(accounts);
-        for (let i = 10; i < 30; i++) {
-            await registerOracle(accounts[i]);
-            let indexes = await getOracleIndexes(accounts[i]);
-            oracles.set(accounts[i], indexes);
-            console.log(`Registered Oracle: ${accounts[i]} with ${indexes}`);
+        for (let a = 10; a < 30; a++) {
+            await registerOracle(accounts[a]);
+            let indexes = await getOracleIndexes(accounts[a]);
+            oraclesMap.set(accounts[a], indexes);
+            console.log(`Registered Oracle: ${accounts[a]} with ${indexes}`);
         }
     } catch (error){
         console.log(error);
@@ -79,7 +79,7 @@ const submitOracleResponses = async(event) =>{
 
 const getOraclesByIndex = (desiredIndex) => {
     let matchingOracles = [];
-    for (let [address, indexes] of oracles) {
+    for (let [address, indexes] of oraclesMap) {
         indexes.forEach(index => {
             if (index == desiredIndex) {
                 matchingOracles.push(address);
@@ -116,53 +116,10 @@ const flightStatusCodeGenerator = () =>{
     }
 };
 
-const fundAirline = () =>{
-    return new Promise((resolve, reject) => {
-        flightSuretyApp.methods.fund().send({from: accounts[0], value: web3.utils.toWei('10', 'ether'), gas: 500000}, (error, result) =>{
-            if(error){
-                console.log('Unable to fundAirline due to ' + error.message);
-                reject(error);
-            }
-            else {
-                resolve(result);
-            }
-        });
-    });
-};
-
-const registerFlight = () =>{
-    return new Promise((resolve, reject) => {
-        flightSuretyApp.methods.registerFlight(flightNumber, 1122334455).send({from: accounts[0], gas: 500000}, (error, result) =>{
-            if(error){
-                console.log('Unable to registerFlight due to ' + error.message);
-                reject(error);
-            }
-            else {
-                resolve(result);
-            }
-        });
-    });
-};
-
-const fetchFlightStatus = () =>{
-    return new Promise((resolve, reject) => {
-        flightSuretyApp.methods.fetchFlightStatus(flightNumber).send({from: accounts[0], gas: 500000}, (error, result) =>{
-            if(error){
-                console.log('Unable to fetchFlightStatus due to ' + error.message);
-                reject(error);
-            }
-            else {
-                resolve(result);
-            }
-        });
-    });
-};
-
 flightSuretyApp.events.OracleRequest({fromBlock: 0}, (error, event) => {
     if (error)
         console.log(error);
     else {
-        console.log('OracleRequest event received');
         submitOracleResponses(event);
     }
 });
@@ -171,7 +128,7 @@ flightSuretyApp.events.OracleReport({fromBlock: 0}, (error, event) => {
     if (error)
         console.log(error);
     else
-        console.log('OracleReport event received');
+        console.log('OracleReport received');
 });
 
 flightSuretyApp.events.FlightStatusInfo({fromBlock: 0}, (error, event) => {
@@ -194,7 +151,7 @@ app.get('/api', (req, res) => {
     })
 });
 
-registerInitialOracles();
+initializeOracles();
 
 module.export = {
     app
