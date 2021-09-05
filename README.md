@@ -76,9 +76,11 @@ To install, download or clone the repo, then:
 ## Run truffle tests:
 
 In the Command Prompt terminal run:
+
 `ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster" -e 500 -a 40 -l 10000000`
 
 Then in a new Command Prompt terminal run:
+
 `truffle.cmd test`
 
 ## Run the Dapp:
