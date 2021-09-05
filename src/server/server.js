@@ -12,7 +12,7 @@ let flightSuretyApp = new web3.eth.Contract(FlightSuretyApp.abi, config.appAddre
 
 const oraclesMap = new Map();
 let accounts = [];
-const statuses = [20, 0, 10, 30, 40, 50];
+const statuses = [0, 10, 20, 30, 40, 50];
 
 const initializeOracles = async () => {
     try {
