@@ -1,10 +1,8 @@
-# FlightSurety
+# Flight Delay Insurance Dapp POC
 
-FlightSurety is a sample application project for Udacity's Blockchain course.
+FlightSurety is a sample application project to demonstrate the feasibility of decentralizing the transfer of risk among peers on Ethereum.
 
-## Udacity Project Requirements
-
-### Separation of Concerns, Operational Control and "Fail Fast"
+## Separation of Concerns, Operational Control and "Fail Fast"
 
 Smart Contract Separation
 * Contracts have been separated into FlightSuretyData.sol and FlightSuretyApp.sol
@@ -24,7 +22,7 @@ Fail Fast Contract
 * "Require()" calls have been implemented in the beginning of each function body within each contract
 
 
-### Airlines
+## Airlines
 Airline Contract Initialization
 * First airline is registered with contract deployment
 
@@ -36,7 +34,7 @@ Airline Ante
 * Run trufffle.cmd test to view "Only registered AND funded airlines should be able to register a flight" test criteria passes
 
 
-### Passengers
+## Passengers
 Passenger Airline Choice
 * See screenshot below or run the dapp
 ![truffle test](images/passengerchoice.PNG)
@@ -48,7 +46,7 @@ Passenger Repayment && Passenger Withdraw && Insurance Payouts
 * Run truffle.cmd test to view "Criteria: Oracle (Oracle Functions, Oracle Initialization, Updates) && Passengers (Passenger Repayment, Withdraw, and Insurance Payouts)" test criteria passes
 
 
-### Oracles (Server App)
+## Oracles (Server App)
 Functioning Oracle
 * Run trufffle.cmd test to view oracle.js tests pass
 
@@ -73,7 +71,7 @@ To install, download or clone the repo, then:
 `npm install`
 `truffle.cmd compile`
 
-## Run truffle tests:
+### Run truffle tests:
 
 In the Command Prompt terminal run:
 
@@ -83,7 +81,7 @@ Then in a new Command Prompt terminal run:
 
 `truffle.cmd test`
 
-## Run the Dapp:
+### Run the Dapp:
 
 In the Command Prompt terminal run:
 
@@ -99,11 +97,11 @@ To view dapp:
 
 `http://localhost:8000`
 
-## Develop Oracle Server
+### Develop Oracle Server
 
 `npm run server`
 
-## Deploy
+### Deploy
 
 To build dapp for prod:
 `npm run dapp:prod`
